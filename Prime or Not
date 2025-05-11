@@ -1,0 +1,36 @@
+Prime or Not:
+
+Given a positive integer - N, check whether the number is prime or not.
+
+Input Format
+The first and only line of input contains an integer - N.
+
+Output Format
+Print "Yes" if the number is prime, "No" otherwise.
+
+Constraints
+1 <= N <= 108
+
+Example
+Input
+11
+
+Output
+Yes
+
+code:
+def isprime(n):
+    if n<=1:
+        return "No"
+    elif n<=3:
+        return "Yes"
+    elif n%2==0 or n%3==0:
+        return "No"
+    i = 5
+    while(i*i<=n):
+        if (n%i==0) or (n%(i+2)==0):
+            return "No"
+        i+=6
+    return "Yes"
+n = int(input())
+print(isprime(n))
