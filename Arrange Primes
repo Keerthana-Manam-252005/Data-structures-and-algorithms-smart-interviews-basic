@@ -1,0 +1,40 @@
+Arrange Primes:
+
+Given an integer N. Print the count of permutations for the numbers from 1 to N, considering that prime numbers should be placed at positions with prime indices (1 - based indexing). As the result might be a large number, print the output % 1e9 + 7.
+
+Input Format
+The first and only line of input contains an integer N.
+
+Output Format
+Print the count of permutations.
+
+Constraints
+1 ≤ N ≤ 100
+
+Example
+Input
+8
+
+Output
+576
+
+code:
+mod = 1000000007
+def count_primes(n):
+    is_prime = [False,False]+[True]*(n-1)
+    for i in range(2, int(n**0.5)+1):
+        if is_prime[i]:
+            for j in range(i*i,n+1,i):
+                is_prime[j] = False
+    return is_prime
+def fact(x):
+    ans = 1
+    for i in range(2,x+1):
+        ans = (ans*i) % mod
+    return ans
+n = int(input())
+prime = count_primes(n)
+prime_count = sum(prime[1:n+1])
+prime_index_count = sum(prime[1:n+1])
+res = (fact(prime_count)*fact(n-prime_count)) % mod
+print(res)
