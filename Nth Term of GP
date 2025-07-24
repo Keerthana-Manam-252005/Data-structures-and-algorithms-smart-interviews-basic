@@ -1,0 +1,25 @@
+Nth Term of GP:
+
+Given the first term a, common ratio r, and an integer N, your task is to find Nth term of Geometric Progression(GP).
+
+Input Format
+The first and only line of input contains a, r and N.
+
+Output Format
+Print Nth term of the Geometric Progression(GP) series.
+
+Constraints
+1 <= a <= 20
+1 <= r <= 10
+1 <= N <= 9
+
+Example
+Input
+1 2 3 
+
+Output
+4
+
+code:
+a,r,N = list(map(int,input().split()))
+print(a*(r**(N-1)))
