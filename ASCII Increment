@@ -1,0 +1,36 @@
+ASCII Increment:
+
+Given a string S, replace each character in the string S with the character that is K positions ahead of it in the ASCII sequence.
+
+Note: 
+If K causes a character to go beyond 'z' or 'Z', wrap around to 'a' or 'A' respectively.  Input Format
+The first line of input contains string S, consisting of lowercase and uppercase characters. The second line contains K - an integer representing how many positions each character in the string should be shifted forward in the ASCII sequence.
+
+Output Format
+Print the transformed string.
+
+Constraints
+1 <= len(S) <= 100
+0 <= K <= 100
+
+Example
+Input
+LeaRn
+4
+
+Output
+PieVr
+
+code:
+S = input()
+k = int(input())
+ans = ''
+for i in S:
+    if 'a'<=i<='z':
+        new_ch = chr(((ord(i)-ord('a')+k)%26)+ord('a'))
+    elif 'A'<=i<='Z':
+        new_ch = chr(((ord(i)-ord('A')+k)%26)+ord('A'))
+    else:
+        new_ch = i
+    ans+= new_ch
+print(ans)
