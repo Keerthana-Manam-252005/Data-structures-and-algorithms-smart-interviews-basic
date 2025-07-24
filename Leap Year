@@ -1,0 +1,26 @@
+Leap Year:
+
+Given an year X, check if X is a leap year or not.
+
+Input Format
+The first and only line of input contains a single integer X - the year.
+
+Output Format
+Print 'Yes' if the X is a leap year, 'No' otherwise.
+
+Constraints
+1 <= X <= 104
+
+Example
+Input
+2024
+
+Output
+Yes
+
+code:
+X = int(input())
+if ((X%4==0 and X%100!=0) or X%400==0):
+    print("Yes")
+else:
+    print("No")
