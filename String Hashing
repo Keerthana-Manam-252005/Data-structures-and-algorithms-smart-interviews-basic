@@ -1,0 +1,35 @@
+String Hashing:
+
+Given a string S of length N. Compute hash value for the string using this hash function.
+h(S) = ∑(S[i] * p(i+1)), where i ranges from 0 to N-1.
+
+Note: Take the value of p as 11 
+
+Input Format
+Input contains a string S, consisting of lowercase and uppercase characters.
+
+Output Format
+Print the hash value for S.
+
+Constraints
+1 <= N <= 8
+
+Example
+Input
+ab
+
+Output
+12925
+
+Explanation
+
+ASCII values of 'a' = 97, 'b' = 98 
+h(S) = 97*11 + 98*112 = 12925
+
+code:
+S = input()
+hash_val = 0
+p = 11
+for i in range(len(S)):
+    hash_val+= ord(S[i])*(p**(i+1))
+print(hash_val)
