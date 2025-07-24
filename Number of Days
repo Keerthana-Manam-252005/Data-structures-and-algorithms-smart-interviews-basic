@@ -1,0 +1,30 @@
+Number of Days:
+
+Given 2 unique dates, print the number of days between the 2 given dates.
+
+Input Format
+The first and only line of input contains 2 dates separated by space.
+
+Output Format
+Print the number of days.
+
+Constraints
+The given dates are valid dates between the years 1971 and 2100.
+
+Example
+Input
+2000-01-16 1999-12-30
+
+Output
+17
+
+code:
+from datetime import datetime
+def no_of_days(d1,d2):
+    d_format = "%Y-%m-%d"
+    d1 = datetime.strptime(d1,d_format)
+    d2 = datetime.strptime(d2,d_format)
+    return abs((d1-d2).days)
+i = input().strip()
+d1,d2 = i.split()
+print(no_of_days(d1,d2))
